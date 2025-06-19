@@ -1,3 +1,223 @@
-input{
-    display: inline-block;
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #FCD8CD;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Input section styling */
+#inputNotes {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+fieldset {
+    border: none;
+    padding: 30px;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #4a5568;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[name="title"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[name="title"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+textarea[name="description"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+textarea[name="description"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#submit {
+    width: 100%;
+    padding: 15px;
+    background: #FB9E3A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Display notes section */
+#displayNotes {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Individual note styling */
+.notes {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.description {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+/* Button container */
+.note-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Button styling */
+.delbtn, .updatebtn, .okBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delbtn {
+    background: #F75A5A;
+    color: white;
+}
+
+.delbtn:hover {
+    background: #c53030;
+    transform: translateY(-1px);
+}
+
+.updatebtn {
+    background: #b8f500;
+    color: white;
+}
+
+.updatebtn:hover {
+    background: #A4DD00;
+    transform: translateY(-1px);
+}
+
+.okBtn {
+    background: #3182ce;
+    color: white;
+    margin-top: 15px;
+}
+
+.okBtn:hover {
+    background: #2c5282;
+    transform: translateY(-1px);
+}
+
+/* Update input fields */
+.notes input[type="text"],
+.notes textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.notes input[type="text"]:focus,
+.notes textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+.notes textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    fieldset {
+        padding: 20px;
+    }
+    
+    .notes {
+        padding: 20px;
+    }
+    
+    .note-buttons {
+        flex-direction: column;
+    }
+    
+    .delbtn, .updatebtn {
+        width: 100%;
+    }
 }
